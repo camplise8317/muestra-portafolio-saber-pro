@@ -6,7 +6,7 @@
 <style>
 :root {
   color-scheme: light;
-  --surface-1: #fcfcfb; --page:#f9f9f7;
+  --surface-1: #ffffff; --page:#e8f1fb;
   --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#898781;
   --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,0.10);
   --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a; --series-4:#eda100; --series-total:#6b6a65;
@@ -18,9 +18,9 @@
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --surface-1:#1a1a19; --page:#0d0d0d;
+  --surface-1:#141b28; --page:#0a111d;
   --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
-  --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,0.10);
+  --grid:#273345; --baseline:#38435a; --border:rgba(255,255,255,0.10);
   --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500; --series-total:#a19f97;
   --fac-1:#3987e5; --fac-2:#d95926; --fac-3:#199e70; --fac-4:#c98500; --fac-5:#d55181; --fac-6:#008300;
   --brand-a:#3987e5; --brand-b:#199e70;
@@ -66,7 +66,7 @@ button.toggle:hover { transform:translateY(-1px); box-shadow:0 3px 10px var(--sh
 .chip.off { opacity:.35; }
 .chip.off:hover { box-shadow:none; transform:none; }
 .chip.total { border-style:dashed; }
-nav.tabs { position:sticky; top:57px; z-index:19; background:var(--page); border-bottom:1px solid var(--border);
+nav.tabs { background:var(--page); border-bottom:1px solid var(--border);
           padding:6px 24px 0; display:flex; gap:4px; overflow-x:auto; }
 nav.tabs button { border:none; background:transparent; color:var(--text-secondary); font-size:13px;
                   padding:9px 16px; cursor:pointer; border-radius:99px 99px 0 0; white-space:nowrap;
@@ -203,15 +203,6 @@ function aplicarTema(t) {
 aplicarTema(localStorage.getItem("tema-tablero-resultados") || "light");
 btnTema.onclick = () => aplicarTema(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
 
-// el header ahora tiene 2 filas (grupos + facultad) y su alto ya no es fijo
-// -depende de cuantas lineas ocupen los chips en cada pantalla-, asi que la
-// barra de pestañas ajusta su "top" al alto real del header en vez de un
-// valor fijo en CSS (que se quedaria corto y taparia una fila de chips).
-const headerPrincipal = document.getElementById("headerPrincipal");
-const tabsNavEl = document.getElementById("tabs");
-function ajustarAltoHeader() { tabsNavEl.style.top = headerPrincipal.offsetHeight + "px"; }
-window.addEventListener("resize", ajustarAltoHeader);
-
 // --- selector de grupos (incluye "Total") ---------------------------------
 let seleccion = new Set(TODOS);
 const selectorDiv = document.getElementById("selectorGrupos");
@@ -331,7 +322,6 @@ function pintarSelectorModo() {
   });
 }
 pintarSelectorModo();
-ajustarAltoHeader();
 
 // --- utilidades estadisticas --------------------------------------------
 function media(arr) { return arr.reduce((a,b)=>a+b,0) / arr.length; }
