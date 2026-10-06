@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muestra de portafolio — Simulacro Saber Pro</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         font-family: system-ui,-apple-system,"Segoe UI",sans-serif; background:#f4f6fb;
+         background-image: radial-gradient(circle at 20% 20%, rgba(42,120,214,.10), transparent 45%),
+                            radial-gradient(circle at 80% 80%, rgba(27,175,122,.10), transparent 45%); }
+  main { max-width: 760px; width:100%; padding: 40px 20px; }
+  h1 { font-size: 22px; margin: 0 0 6px; color:#0b0b0b; }
+  p.lead { color:#52514e; margin:0 0 28px; font-size:14.5px; }
+  .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+  a.card { display:block; background:#fff; border:1px solid rgba(11,11,11,.10); border-radius:16px;
+           padding:22px 24px; text-decoration:none; color:inherit; transition:transform .15s ease, box-shadow .15s ease; }
+  a.card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(42,120,214,.16); }
+  a.card .tag { display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+                padding:3px 10px; border-radius:99px; margin-bottom:12px; }
+  a.card.tablero .tag { background:rgba(42,120,214,.12); color:#2a78d6; }
+  a.card.informe .tag { background:rgba(27,175,122,.12); color:#1baf7a; }
+  a.card h2 { font-size:16px; margin:0 0 6px; }
+  a.card p { font-size:13px; color:#52514e; margin:0; }
+  footer { margin-top:28px; font-size:11.5px; color:#898781; text-align:center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Muestra de portafolio — Simulacro Saber Pro</h1>
+  <p class="lead">Dos vistas de ejemplo: el tablero que ve la universidad y el informe individual que recibe cada estudiante. Todos los datos de la universidad y de los estudiantes son inventados; el ensayo y la retroalimentación de Comunicación Escrita sí son reales (anonimizados).</p>
+  <div class="cards">
+    <a class="card tablero" href="tablero.html">
+      <span class="tag">Universidad</span>
+      <h2>Tablero de resultados →</h2>
+      <p>Simulacro 2 Saber Pro, por facultad y por competencia, con comparación Simulacro 1 vs 2.</p>
+    </a>
+    <a class="card informe" href="informe_estudiante_muestra.pdf">
+      <span class="tag">Estudiante</span>
+      <h2>Informe individual (PDF) →</h2>
+      <p>Resultado y retroalimentación personalizada de un estudiante de muestra, incluyendo Comunicación Escrita.</p>
+    </a>
+  </div>
+  <footer>MUESTRA DE PORTAFOLIO — ningún dato real de universidad o estudiante, salvo el ensayo y la retroalimentación de Comunicación Escrita (anonimizados).</footer>
+</main>
+</body>
+</html>
